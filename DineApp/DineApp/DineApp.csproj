@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\rupee.png" />
+    <Content Remove="wwwroot\images\user.png" />
+    <Content Remove="wwwroot\images\waiter.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\images\rupee.png" />
+    <EmbeddedResource Include="wwwroot\images\user.png" />
+    <EmbeddedResource Include="wwwroot\images\waiter.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model BillDesk
+<div class="mainContainer">
+    <div class="card">
+        <div class="card-header">
+            Table No:
+            <span class="headerinfo">Location-Wise Table</span>
+        </div>
+        <div class="card-body">
+            @foreach(var table in @Model.Tables){
+                <div class="tableBtn btn btn-primary" onclick="location.href='/Home/AddOrder?tableNo=@table.No'">
+                    <img class="btnimage" src="@GetImage(table)">
+                    @table.TableName
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <div class="btn btn-outline-primary footerBtn">
+                <img src="images/rupee.png" class="footerbtnimage" />
+                Refresh
+            </div>
+            <div class="btn btn-outline-primary footerBtn">
+                <img src="images/rupee.png" class="footerbtnimage" />
+                Refresh
+            </div>
+            <div class="btn btn-outline-primary footerBtn">
+                <img src="images/rupee.png" class="footerbtnimage" />
+                Refresh
+            </div>
+            <div class="btn btn-outline-primary footerBtn">
+                <img src="images/rupee.png" class="footerbtnimage" />
+                Refresh
+            </div>
+            <div class="btn btn-outline-primary footerBtn">
+                <img src="images/rupee.png" class="footerbtnimage" />
+                Refresh
+            </div>
+            <div>
+                Busy:<input type="checkbox" />
+                Billed:<input type="checkbox" />
+                Free:<input type="checkbox" />
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Order Bill:</div>
+        <div class="card-body">
+            @foreach (var table in Model.Orders)
+            {
+                <div class="tableBtn btn btn-primary">
+                    <div style="width:10px"></div>
+                    @table.Table.TableName
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Header
+           
+        </div>
+        <div class="card-body">
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+    </div>
+</div>
+@{
+    string GetImage(Table table){
+        string srcPath = @"images/rupee.png";
+        if (!table.IsBillable)
+            srcPath = @"images/user.png";
+        else
+        {
+            if(table.TableState==TableState.Ordered)
+            {
+                srcPath = @"images/waiter.png";
+            }
+
+        }
+
+        return srcPath;
+    }
+}

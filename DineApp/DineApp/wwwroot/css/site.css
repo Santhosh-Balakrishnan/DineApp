@@ -1,0 +1,74 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    margin: 10px;
+    height: 80vh;
+}
+
+.cardcontainer {
+    display: grid;
+    grid-template-rows: repeat(.2fr,1fr,.2fr);
+    background-color: #e3f1fa;
+}
+
+.card-header {
+    background-color: #067acc !important;
+    color: white !important;
+    border-radius: initial;
+    border-top-left-radius: inherit !important;
+    border-top-right-radius: inherit !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+
+}
+.card-body {
+    height: inherit !important;
+    overflow:auto;
+
+}
+
+.card {
+    border-radius: 1rem;
+    height: inherit !important;
+}
+
+.tableBtn {
+    width: 95px;
+    height: 45px;
+    margin: 2px;
+    font-size: 22px !important;
+}
+.btnimage {
+    height:20px;
+    width:20px;
+}
+.headerinfo {
+    background-color: green;
+    color: white;
+    float: right;
+    font-weight: bold;
+    height: 100% !important;
+}
+.footerbtnimage {
+    width: 15px;
+    height: 15px;
+}
+.footerBtn {
+    width: 45px;
+    height: 45px;
+    margin: 2px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+    font-size:.8rem !important;
+}
